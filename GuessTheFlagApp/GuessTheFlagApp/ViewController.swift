@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    //Mark: IBOutlet
     
     @IBOutlet var button1: UIButton!
     
@@ -38,21 +38,51 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.red.cgColor
         button3.layer.borderColor = UIColor.blue.cgColor
         
-        title = countries[correctAnswer].uppercased()
+        
         
         askQuestion()
         
     }
     
-    func askQuestion() {
-        
-        countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+    func askQuestion(action: UIAlertAction! = nil) {
         
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
+        
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
+        title = countries[correctAnswer].uppercased()
+       
+        
+        
     }
+    
+    //Mark: IBOActions
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var title: String
+        
+        if sender.tag == correctAnswer
+        {
+            title = "Correct"
+            score += 1
+        } else {
+        
+            title = "Wrong"
+            score -= 1
+        }
+        
+        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+        present(ac, animated: true)
+    }
+    
+    
+    
+    
+    
+    
 
 
 }
