@@ -79,6 +79,10 @@ class ViewController: UIViewController {
         
             title = "Wrong"
             score -= 1
+            myScore.text = "\(score)"
+            let ac = UIAlertController(title: title, message: "WRONG YOU SHOUDLD HAVE CHOSEN \(title)", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+            present(ac, animated: true)
         }
         
         let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
