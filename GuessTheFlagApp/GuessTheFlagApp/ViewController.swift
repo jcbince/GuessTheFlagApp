@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var button3: UIButton!
     
+    @IBOutlet var myScore: UILabel!
+    
     var countries = [String]()
     var score = 0
     
@@ -67,6 +69,12 @@ class ViewController: UIViewController {
         {
             title = "Correct"
             score += 1
+            myScore.text = "\(score)"
+            if (score > 9) {
+                let ac = UIAlertController(title: title, message: "CONGRATZ YOUR SCORE IS:  \(score).", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+                present(ac, animated: true)
+            }
         } else {
         
             title = "Wrong"
