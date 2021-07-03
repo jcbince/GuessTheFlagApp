@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v8S-cf-iWw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessTheFlagApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXG-ZJ-34T">
+                                <rect key="frame" x="107" y="193" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozj-T9-XAb">
+                                <rect key="frame" x="107" y="351" width="200" height="100"/>
+                                <state key="normal" image="germany"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfT-Gu-3Ek">
+                                <rect key="frame" x="107" y="506" width="200" height="100"/>
+                                <state key="normal" image="france"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ozj-T9-XAb" firstAttribute="top" secondItem="XXG-ZJ-34T" secondAttribute="bottom" constant="58" id="1S7-UF-tHW"/>
+                            <constraint firstItem="DfT-Gu-3Ek" firstAttribute="top" secondItem="ozj-T9-XAb" secondAttribute="bottom" constant="55" id="4ed-kv-EZk"/>
+                            <constraint firstItem="DfT-Gu-3Ek" firstAttribute="centerX" secondItem="ozj-T9-XAb" secondAttribute="centerX" id="JI3-dO-WV8"/>
+                            <constraint firstItem="ozj-T9-XAb" firstAttribute="centerX" secondItem="XXG-ZJ-34T" secondAttribute="centerX" id="LI2-rA-bD8"/>
+                            <constraint firstItem="XXG-ZJ-34T" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kSR-Kn-8Hc"/>
+                            <constraint firstItem="XXG-ZJ-34T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="105" id="tOv-UB-PDo"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CFI-hr-fje"/>
+                    <connections>
+                        <outlet property="button1" destination="XXG-ZJ-34T" id="noW-ag-jof"/>
+                        <outlet property="button2" destination="ozj-T9-XAb" id="MfW-ex-WcZ"/>
+                        <outlet property="button3" destination="DfT-Gu-3Ek" id="uov-sP-voZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="858" y="106"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rPJ-dD-qMa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v8S-cf-iWw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gBQ-Wm-oHV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Orm-ej-zsg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Atv-1f-RBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="france" width="200" height="100"/>
+        <image name="germany" width="200" height="100"/>
+        <image name="us" width="200" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
